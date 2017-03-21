@@ -17,6 +17,27 @@ export default class Search extends Component {
     };
   }
 
+  renderHeader(){
+    const {title} = this.props;
+
+    return(
+      <Header>
+              <Left>
+                <Button transparent>
+                    <Icon name='menu' />
+                </Button>
+              </Left>
+              <Body>
+                  <Title>{title}</Title>
+              </Body>
+              <Right>
+
+              </Right>
+          </Header>
+    )
+
+    }
+
   renderRow(rowData){
     return(
       <ListItem>
@@ -56,21 +77,7 @@ export default class Search extends Component {
   render() {
         return (
             <Container>
-            <Header>
-                    <Left>
-                        <Button transparent>
-                            <Icon name='arrow-back' />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title>Header</Title>
-                    </Body>
-                    <Right>
-                        <Button transparent>
-                            <Icon name='menu' />
-                        </Button>
-                    </Right>
-                </Header>
+              {this.renderHeader()}
                 <Content>
                     <ListView
                       dataSource={this.state.dataSource}
