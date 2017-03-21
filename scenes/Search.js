@@ -2,19 +2,13 @@ import React, { Component } from 'react';
 import {StyleSheet, View,Image,ListView } from 'react-native';
 import { Container, Header, Title, Right, Content, Card, CardItem, Left, Body, Thumbnail, Text, Button, Icon, ListItem } from 'native-base';
 import {Actions} from 'react-native-router-flux';
+import {observer} from 'mobx-react/native';
+
+@observer
 export default class Search extends Component {
 
   constructor(){
     super();
-    const ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 != r2});
-    this.cars = [
-      {cover: '../img/pexels-photo-300001.jpeg', profile: '../img/2017-lamborghini-aventador-s-5.jpg', title: "First", description: 'Description 1'},
-      {cover: '../img/pexels-photo-300001.jpeg', profile: '../img/2017-lamborghini-aventador-s-5.jpg', title: "Second", description: 'Description 1'},
-    ];
-
-    this.state = {
-      dataSource: ds.cloneWithRows(this.cars)
-    };
   }
 
   renderHeader(){
@@ -75,12 +69,13 @@ export default class Search extends Component {
   }
 
   render() {
+    const {dataSource} = this.props.store;
         return (
             <Container>
               {this.renderHeader()}
                 <Content>
                     <ListView
-                      dataSource={this.state.dataSource}
+                      dataSource={dataSource}
                       renderRow={this.renderRow.bind(this)}
                     />
                 </Content>
