@@ -48,18 +48,19 @@ export default class Search extends Component {
         <Card>
             <CardItem>
                 <Left>
-                    <Thumbnail source={require('../img/2017-lamborghini-aventador-s-5.jpg')}/>
+                    <Thumbnail source={{uri: rowData.profile}}/>
                     <Body>
-                        <Text>NativeBase</Text>
+                        <Text>{rowData.title}</Text>
                         <Text note>GeekyAnts</Text>
                     </Body>
                 </Left>
               </CardItem>
               <CardItem cardBody>
-                  <Image style={{ resizeMode: 'cover' }} source={require('../img/pexels-photo-300001.jpeg')} />
+              <Image source={{uri: rowData.cover, cache: 'only-if-cached'}}
+   style={{width: 340, height: 250}} />
               </CardItem>
               <CardItem content>
-                  <Text>{rowData.title}</Text>
+                  <Text>{rowData.description}</Text>
               </CardItem>
               <CardItem style={{ justifyContent: 'space-around' }}>
                   <Button transparent>
@@ -87,6 +88,7 @@ export default class Search extends Component {
                     <ListView
                       dataSource={dataSource}
                       renderRow={this.renderRow.bind(this)}
+                      enableEmptySections={true}
                     />
                 </Content>
             </Container>
