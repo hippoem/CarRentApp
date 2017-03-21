@@ -8,8 +8,8 @@ export default class Search extends Component {
     super();
     const ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 != r2});
     this.cars = [
-      {cover: '../img/pexels-photo-300001.jpeg', profile: '../img/2017-lamborghini-aventador-s-5.jpg', title: "First"},
-      {cover: '../img/pexels-photo-300001.jpeg', profile: '../img/2017-lamborghini-aventador-s-5.jpg', title: "Second"},
+      {cover: '../img/pexels-photo-300001.jpeg', profile: '../img/2017-lamborghini-aventador-s-5.jpg', title: "First", description: 'Description 1'},
+      {cover: '../img/pexels-photo-300001.jpeg', profile: '../img/2017-lamborghini-aventador-s-5.jpg', title: "Second", description: 'Description 1'},
     ];
 
     this.state = {
