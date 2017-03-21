@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {StyleSheet, View,Image,ListView } from 'react-native';
 import { Container, Header, Title, Right, Content, Card, CardItem, Left, Body, Thumbnail, Text, Button, Icon, ListItem } from 'native-base';
-
+import {Actions} from 'react-native-router-flux';
 export default class Search extends Component {
 
   constructor(){
@@ -40,7 +40,7 @@ export default class Search extends Component {
 
   renderRow(rowData){
     return(
-      <ListItem>
+      <ListItem onPress={()=> {Actions.CarDetail({car:rowData})}}>
         <Card>
             <CardItem>
                 <Left>

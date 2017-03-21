@@ -30,11 +30,13 @@ class Main extends Component {
   componentWillMount(){
     this.scenes = Actions.create(
       <Scene key="root" tabs={true}>
-        <Scene key="tabbar" tabs={true} tabBarStyle={{backgroundColor: '#f7f7f7'}}>
-          <Scene key="Search" component={Search} title="Search" icon={TabIcon} hideNavBar={true}/>
-          <Scene key="Profile" component={Profile} title="Profile" icon={TabIcon} hideNavBar={true}/>
+        <Scene key ="menus">
+          <Scene key="tabbar" tabs={true} tabBarStyle={{backgroundColor: '#f7f7f7'}}>
+            <Scene key="Search" component={Search} title="Search" icon={TabIcon} hideNavBar={true}/>
+            <Scene key="Profile" component={Profile} title="Profile" icon={TabIcon} hideNavBar={true}/>
+          </Scene>
+          <Scene key="CarDetail" component={CarDetail} title="Car Detail" hideNavbar={false}/>
         </Scene>
-        <Scene key="CarDetail" component={CarDetail} title="Car Detail" hideNavbar={false}/>
       </Scene>
     );
   }
