@@ -11,6 +11,14 @@ export default class Search extends Component {
     super();
   }
 
+  handleAdd(){
+    const doc = {
+      cover: '../img/pexels-photo-300001.jpeg', profile: '../img/2017-lamborghini-aventador-s-5.jpg', title: "Four", description: 'Description 4'
+    };
+
+    this.props.store.add(doc);
+  }
+
   renderHeader(){
     const {title} = this.props;
 
@@ -25,7 +33,9 @@ export default class Search extends Component {
                   <Title>{title}</Title>
               </Body>
               <Right>
-
+                <Button transparent onPress={()=> this.handleAdd()}>
+                  <Icon name="add-circle" style={{color: '#0098ff'}}/>
+                </Button>
               </Right>
           </Header>
     )
