@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 import {StyleSheet, View } from 'react-native';
 import { Image } from 'react-native';
-import { Container, Content, Card, CardItem, Left, Body, Thumbnail, Text, Button, Icon } from 'native-base';
+import { Container, Header, Title, Right, Content, Card, CardItem, Left, Body, Thumbnail, Text, Button, Icon } from 'native-base';
 
 export default class Search extends Component {
 
   render() {
         return (
             <Container>
+            <Header>
+                    <Left>
+                        <Button transparent>
+                            <Icon name='arrow-back' />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Header</Title>
+                    </Body>
+                    <Right>
+                        <Button transparent>
+                            <Icon name='menu' />
+                        </Button>
+                    </Right>
+                </Header>
                 <Content>
                     <Card >
                         <CardItem>
@@ -36,7 +51,7 @@ export default class Search extends Component {
                                   <Icon active name="chatbubbles" />
                                   <Text>4 Comments</Text>
                               </Button>
-                              
+
                         </CardItem>
                    </Card>
                 </Content>
